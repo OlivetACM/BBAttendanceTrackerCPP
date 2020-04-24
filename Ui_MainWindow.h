@@ -41,8 +41,8 @@ public:
     QVBoxLayout *leftSide;
     QVBoxLayout *upperLayout;
     QSpacerItem *verticalSpacer_3;
-    QLineEdit *txtUsername;
-    QLineEdit *txtPassword;
+//    QLineEdit *txtUsername;
+//    QLineEdit *txtPassword;
     QPushButton *btnLogin;
     QVBoxLayout *middleLayout;
     QComboBox *comboClasses;
@@ -98,21 +98,21 @@ public:
 
         upperLayout->addItem(verticalSpacer_3);
 
-        txtUsername = new QLineEdit(centralwidget);
-        txtUsername->setObjectName(QString::fromUtf8("txtUsername"));
+//        txtUsername = new QLineEdit(centralwidget);
+//        txtUsername->setObjectName(QString::fromUtf8("txtUsername"));
         QFont font;
         font.setPointSize(18);
-        txtUsername->setFont(font);
+//        txtUsername->setFont(font);
 
-        upperLayout->addWidget(txtUsername);
+//        upperLayout->addWidget(txtUsername);
 
-        txtPassword = new QLineEdit(centralwidget);
-        txtPassword->setObjectName(QString::fromUtf8("txtPassword"));
-        txtPassword->setFont(font);
-        txtPassword->setInputMethodHints(Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData);
-        txtPassword->setEchoMode(QLineEdit::Password);
+//        txtPassword = new QLineEdit(centralwidget);
+//        txtPassword->setObjectName(QString::fromUtf8("txtPassword"));
+//        txtPassword->setFont(font);
+//        txtPassword->setInputMethodHints(Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData);
+//        txtPassword->setEchoMode(QLineEdit::Password);
 
-        upperLayout->addWidget(txtPassword);
+//        upperLayout->addWidget(txtPassword);
 
         btnLogin = new QPushButton(centralwidget);
         btnLogin->setObjectName(QString::fromUtf8("btnLogin"));
@@ -321,6 +321,12 @@ public:
         tableWidget->horizontalHeader()->setCascadingSectionResizes(true);
         tableWidget->horizontalHeader()->setDefaultSectionSize(150);
         tableWidget->horizontalHeader()->setStretchLastSection(true);
+        tableWidget->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+        tableWidget->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+        tableWidget->horizontalHeader()->setSectionResizeMode(2, QHeaderView::Stretch);
+        tableWidget->horizontalHeader()->setSectionResizeMode(3, QHeaderView::Stretch);
+        tableWidget->horizontalHeader()->setSectionResizeMode(4, QHeaderView::Stretch);
+        tableWidget->horizontalHeader()->setSectionResizeMode(5, QHeaderView::Stretch);
         tableWidget->verticalHeader()->setVisible(false);
 
         gridLayout->addWidget(tableWidget, 0, 1, 1, 1);
@@ -361,8 +367,8 @@ public:
         actionQuit->setText(QCoreApplication::translate("MainWindow", "Quit", nullptr));
         actionEditAddress->setText(QCoreApplication::translate("MainWindow", "http://blackboard.olivetcollege.edu", nullptr));
         actionEditLate->setText(QCoreApplication::translate("MainWindow", "10 minutes", nullptr));
-        txtUsername->setPlaceholderText(QCoreApplication::translate("MainWindow", "User Name", nullptr));
-        txtPassword->setPlaceholderText(QCoreApplication::translate("MainWindow", "Password", nullptr));
+//        txtUsername->setPlaceholderText(QCoreApplication::translate("MainWindow", "User Name", nullptr));
+//        txtPassword->setPlaceholderText(QCoreApplication::translate("MainWindow", "Password", nullptr));
         btnLogin->setText(QCoreApplication::translate("MainWindow", "Login to Blackboard", nullptr));
         comboClasses->setItemText(0, QCoreApplication::translate("MainWindow", "Select Authorized Class", nullptr));
         comboClasses->setItemText(1, QCoreApplication::translate("MainWindow", "CS 380", nullptr));

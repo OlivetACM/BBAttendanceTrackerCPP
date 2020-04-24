@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
     QMainWindow *mainWin = new QMainWindow;
     Ui::MainWindow ui;
     ui.setupUi(mainWin);
+
     mainWin->show();
     return a.exec();
 }
