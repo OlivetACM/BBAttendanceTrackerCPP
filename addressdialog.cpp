@@ -1,4 +1,5 @@
 #include "addressdialog.h"
+#include "QDebug"
 #include "ui_addressdialog.h"
 
 addressDialog::addressDialog(QWidget *parent) :
@@ -15,10 +16,10 @@ addressDialog::~addressDialog()
 
 void addressDialog::on_buttonBox_accepted()
 {
-
+    qDebug("addressDialog accepted");
 }
 
 void addressDialog::on_buttonBox_rejected()
 {
-
+    qDebug("addressDialog rejected");
 }

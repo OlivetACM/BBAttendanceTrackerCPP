@@ -1,4 +1,5 @@
 #include "latedialog.h"
+#include "QDebug"
 #include "ui_latedialog.h"
 
 lateDialog::lateDialog(QWidget *parent) :
@@ -15,10 +16,10 @@ lateDialog::~lateDialog()
 
 void lateDialog::on_buttonBox_accepted()
 {
-
+    qDebug("lateDialog accepted");
 }
 
 void lateDialog::on_buttonBox_rejected()
 {
-
+    qDebug("lateDialog rejected");
 }

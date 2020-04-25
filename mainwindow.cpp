@@ -23,51 +23,51 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btnLogin_clicked()
 {
+    qDebug("btnLogin clicked");
     loginDialog *ld = new loginDialog();
     ld->exec();
-    qDebug("btnLogin clicked\n");
 }
 
 void MainWindow::on_comboClasses_currentIndexChanged(const QString &arg1)
 {
-    qDebug("comboClass changed %s\n", arg1.toStdString().c_str());
+    qDebug("comboClass changed %s", arg1.toStdString().c_str());
 }
 
 void MainWindow::on_btnSubmit_clicked()
 {
-    qDebug("btnSubmit clicked\n");
+    qDebug("btnSubmit clicked");
 }
 
 void MainWindow::on_btnLogout_clicked()
 {
-    qDebug("btnLogout clicked\n");
+    qDebug("btnLogout clicked");
 }
 
 
 void MainWindow::on_actionQuit_triggered()
 {
-    qDebug("actionQuit triggered\n");
+    qDebug("actionQuit triggered");
     exit(0);
 }
 
 void MainWindow::on_actionChange_Font_triggered()
 {
+    qDebug("fontDialog triggered");
     bool ok;
     QFont font = QFontDialog::getFont(&ok);
     qApp->setFont(font);
-    qDebug("fontDialog triggered\n");
 }
 
 void MainWindow::on_actionBlackboard_Address_triggered()
 {
+    qDebug("loginDialog triggered");
     addressDialog *ad = new addressDialog();
     ad->exec();
-    qDebug("loginDialog triggered\n");
 }
 
 void MainWindow::on_actionLate_Threshold_triggered()
 {
+    qDebug("lateDialog triggered");
     lateDialog *ld = new lateDialog();
     ld->exec();
-    qDebug("lateDialog triggered\n");
 }

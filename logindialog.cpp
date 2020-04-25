@@ -1,4 +1,5 @@
 #include "logindialog.h"
+#include "QDebug"
 #include "ui_logindialog.h"
 
 loginDialog::loginDialog(QWidget *parent) :
@@ -15,10 +16,10 @@ loginDialog::~loginDialog()
 
 void loginDialog::on_buttonBox_accepted()
 {
-
+    qDebug("loginDialog accepted");
 }
 
 void loginDialog::on_buttonBox_rejected()
 {
-
+    qDebug("loginDialog rejected");
 }
