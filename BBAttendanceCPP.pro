@@ -26,13 +26,17 @@ HEADERS += \
     addressdialog.h \
     latedialog.h \
     logindialog.h \
-    mainwindow.h
+    mainwindow.h \
+    ui_addressdialog.h \
+    ui_latedialog.h \
+    ui_logindialog.h \
+    ui_mainwindow.h
 
-FORMS += \
-    addressdialog.ui \
-    latedialog.ui \
-    logindialog.ui \
-    mainwindow.ui
+#FORMS += \
+#    addressdialog.ui \
+#    latedialog.ui \
+#    logindialog.ui \
+#    mainwindow.ui
 
 TRANSLATIONS += \
     untitled_en_US.ts
