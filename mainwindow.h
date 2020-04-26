@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QSettings>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,6 +15,12 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void readSettings();
+    void writeSettings();
+    QSettings settings;
+    QFont font;
+    QString bb_address;
+    int late_threshold;
 
 private slots:
     void on_btnLogin_clicked();

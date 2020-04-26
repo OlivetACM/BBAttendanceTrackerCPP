@@ -14,6 +14,8 @@ class addressDialog : public QDialog
 public:
     explicit addressDialog(QWidget *parent = nullptr);
     ~addressDialog();
+    QString getAddress();
+    void setAddress(QString a);
 
 private slots:
     void on_buttonBox_rejected();

@@ -14,6 +14,16 @@ loginDialog::~loginDialog()
     delete ui;
 }
 
+QString loginDialog::getUsername()
+{
+    return ui->txtUsername->text();
+}
+
+QString loginDialog::getPassword()
+{
+    return ui->txtPassword->text();
+}
+
 void loginDialog::on_buttonBox_accepted()
 {
     qDebug("loginDialog accepted");

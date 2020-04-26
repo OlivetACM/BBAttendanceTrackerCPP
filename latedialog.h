@@ -14,6 +14,8 @@ class lateDialog : public QDialog
 public:
     explicit lateDialog(QWidget *parent = nullptr);
     ~lateDialog();
+    int getLateInterval();
+    void setLateInterval(int n);
 
 private slots:
     void on_buttonBox_accepted();
