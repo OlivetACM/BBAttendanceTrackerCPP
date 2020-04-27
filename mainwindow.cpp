@@ -13,13 +13,16 @@
 void MainWindow::readSettings()
 {
     QSettings *settings = new QSettings(QDir::currentPath() + "/my_config_file.ini", QSettings::IniFormat);
-    font = QFont(settings->value("reader.font", QString()).toString());
-    QString fontFamily = settings->value("reader.font.family", QString()).toString();
+    QString fontName = settings->value("reader.font.name").toString();
+    int fontPointSize = settings->value("reader.font.pointSize").toInt();
+    QString fontFamily = settings->value("reader.font.family").toString();
     if (fontFamily == "") {
         qApp->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
     } else {
+        QFont font(fontName, fontPointSize);
         qApp->setFont(font);
     }
+    qDebug() << fontFamily;
     bb_address = settings->value("reader.bb_address").toString();
     late_threshold = settings->value("reader.late_threshold").toInt();
 }
@@ -29,9 +32,12 @@ void MainWindow::writeSettings()
     QSettings *settings = new QSettings(QDir::currentPath() + "/my_config_file.ini", QSettings::IniFormat);
     settings->setValue("reader.bb_address", bb_address);
     settings->setValue("reader.late_threshold", late_threshold);
-    settings->setValue("reader.font", font.toString());
+    settings->setValue("reader.font.name", font.styleName());
     settings->setValue("reader.font.family", font.family());
+    settings->setValue("reader.font.pointSize", font.pointSize());
     settings->sync();
+    qDebug() << settings->allKeys();
+    qDebug() << font.family();
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -40,6 +46,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    readSettings();
 }
 
 MainWindow::~MainWindow()
