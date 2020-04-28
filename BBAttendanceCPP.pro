@@ -15,24 +15,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+INCLUDEPATH += include/ src/
 SOURCES += \
-    addressdialog.cpp \
-    latedialog.cpp \
-    logindialog.cpp \
-    main.cpp \
-    mainwindow.cpp \
-    mytablewidget.cpp
+    src/addressdialog.cpp \
+    src/latedialog.cpp \
+    src/logindialog.cpp \
+    src/main.cpp \
+    src/mainwindow.cpp \
+    src/mytablewidget.cpp
 
 HEADERS += \
-    addressdialog.h \
-    latedialog.h \
-    logindialog.h \
-    mainwindow.h \
-    mytablewidget.h \
-    ui_addressdialog.h \
-    ui_latedialog.h \
-    ui_logindialog.h \
-    ui_mainwindow.h
+    include/addressdialog.h \
+    include/latedialog.h \
+    include/logindialog.h \
+    include/mainwindow.h \
+    include/mytablewidget.h \
+    include/ui_addressdialog.h \
+    include/ui_latedialog.h \
+    include/ui_logindialog.h \
+    include/ui_mainwindow.h
 
 #FORMS += \
 #    addressdialog.ui \
