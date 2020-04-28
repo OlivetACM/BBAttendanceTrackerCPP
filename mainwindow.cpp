@@ -9,6 +9,7 @@
 #include "QSettings"
 
 #include "ui_mainwindow.h"
+#include "mytablewidget.h"
 
 void MainWindow::readSettings()
 {
@@ -45,6 +46,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tableWidget->selectRow(1);
+    ui->tableWidget->searchIDAndMarkPresent("53363");
     readSettings();
 }
 

@@ -27,6 +27,8 @@
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
+#include "mytablewidget.h"
+
 QT_BEGIN_NAMESPACE
 
 class Ui_MainWindow
@@ -57,7 +59,7 @@ public:
     QSpacerItem *verticalSpacer_2;
     QPushButton *btnSubmit;
     QPushButton *btnLogout;
-    QTableWidget *tableWidget;
+    myTableWidget *tableWidget;
     QMenuBar *menubar;
     QMenu *menuBBAttendanceTracker;
     QStatusBar *statusbar;
@@ -227,7 +229,7 @@ public:
 
         gridLayout->addLayout(leftSide, 0, 0, 1, 1);
 
-        tableWidget = new QTableWidget(centralwidget);
+        tableWidget = new myTableWidget(centralwidget);
         if (tableWidget->columnCount() < 6)
             tableWidget->setColumnCount(6);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
@@ -304,7 +306,7 @@ public:
         tableWidget->setShowGrid(false);
         tableWidget->setSortingEnabled(true);
         tableWidget->horizontalHeader()->setCascadingSectionResizes(true);
-        tableWidget->horizontalHeader()->setDefaultSectionSize(150);
+//        tableWidget->horizontalHeader()->setDefaultSectionSize(150);
         tableWidget->horizontalHeader()->setStretchLastSection(true);
         tableWidget->verticalHeader()->setVisible(false);
         tableWidget->verticalHeader()->setHighlightSections(false);

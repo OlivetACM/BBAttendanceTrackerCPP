@@ -20,13 +20,15 @@ SOURCES += \
     latedialog.cpp \
     logindialog.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    mytablewidget.cpp
 
 HEADERS += \
     addressdialog.h \
     latedialog.h \
     logindialog.h \
     mainwindow.h \
+    mytablewidget.h \
     ui_addressdialog.h \
     ui_latedialog.h \
     ui_logindialog.h \
