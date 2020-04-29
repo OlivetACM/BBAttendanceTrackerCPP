@@ -10,6 +10,7 @@
 
 #include "ui_mainwindow.h"
 #include "mytablewidget.h"
+#include "dumpToFile.h"
 
 void MainWindow::readSettings()
 {
@@ -73,6 +74,7 @@ void MainWindow::on_comboClasses_currentIndexChanged(const QString &arg1)
 void MainWindow::on_btnSubmit_clicked()
 {
     qDebug("btnSubmit clicked");
+    dumpToFile(ui->tableWidget, "text");
 }
 
 void MainWindow::on_btnLogout_clicked()

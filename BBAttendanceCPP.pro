@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 INCLUDEPATH += include/ src/
 SOURCES += \
     src/addressdialog.cpp \
+    src/dumpToFile.cpp \
     src/latedialog.cpp \
     src/logindialog.cpp \
     src/main.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
 
 HEADERS += \
     include/addressdialog.h \
+    include/dumpToFile.h \
     include/latedialog.h \
     include/logindialog.h \
     include/mainwindow.h \
