@@ -13,7 +13,7 @@ myTableWidget::myTableWidget(QWidget *parent)
 
 void myTableWidget::searchIDAndMarkPresent(QString id) {
     foreach(QTableWidgetItem *i, this->findItems(id, 0)) {
-        //qDebug() << i->text();
+        qDebug() << id;
         this->selectRow(i->row());
         const QDateTime date = QDateTime::currentDateTime();
         this->item(i->row(), 3)->setText(date.toString("h:mm a"));
@@ -22,5 +22,13 @@ void myTableWidget::searchIDAndMarkPresent(QString id) {
 
 void myTableWidget::keyPressEvent(QKeyEvent *event) {
     // this now receives all keypresses.
-    qDebug() << event->text();
+    qDebug() << currentID;
+    if(event->key() == 16777220) {
+        searchIDAndMarkPresent(currentID);
+        currentID = "";
+    } else {
+        if(QString("0123456789").contains(event->text())) {
+            currentID += event->text();
+        }
+    }
 }

@@ -9,6 +9,10 @@ public:
     myTableWidget(QWidget *parent = 0);
     void searchIDAndMarkPresent(QString id);
     void keyPressEvent(QKeyEvent *event);
+    QString currentID;
+
+public slots:
+
 };
 
 #endif // MYTABLEWIDGET_H
