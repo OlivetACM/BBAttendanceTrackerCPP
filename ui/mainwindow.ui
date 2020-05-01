@@ -362,6 +362,14 @@
         <set>AlignCenter</set>
        </property>
       </row>
+      <row>
+       <property name="text">
+        <string>New Row</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </row>
       <column>
        <property name="text">
         <string>Student ID</string>
@@ -418,7 +426,7 @@
       </item>
       <item row="0" column="3">
        <property name="text">
-        <string>12:40 PM</string>
+        <string/>
        </property>
        <property name="textAlignment">
         <set>AlignCenter</set>
@@ -426,7 +434,7 @@
       </item>
       <item row="0" column="4">
        <property name="text">
-        <string>12:50 PM</string>
+        <string/>
        </property>
        <property name="textAlignment">
         <set>AlignCenter</set>
@@ -442,7 +450,7 @@
       </item>
       <item row="1" column="0">
        <property name="text">
-        <string>53314</string>
+        <string>126910</string>
        </property>
        <property name="textAlignment">
         <set>AlignCenter</set>
@@ -450,7 +458,7 @@
       </item>
       <item row="1" column="1">
        <property name="text">
-        <string>Susanne</string>
+        <string>Justin</string>
        </property>
        <property name="textAlignment">
         <set>AlignCenter</set>
@@ -458,29 +466,61 @@
       </item>
       <item row="1" column="2">
        <property name="text">
-        <string>Lewis</string>
-       </property>
-       <property name="textAlignment">
-        <set>AlignCenter</set>
-       </property>
-      </item>
-      <item row="1" column="3">
-       <property name="text">
-        <string>1:50 PM</string>
-       </property>
-       <property name="textAlignment">
-        <set>AlignCenter</set>
-       </property>
-      </item>
-      <item row="1" column="4">
-       <property name="text">
-        <string>2:00 PM</string>
+        <string>Lavin</string>
        </property>
        <property name="textAlignment">
         <set>AlignCenter</set>
        </property>
       </item>
       <item row="1" column="5">
+       <property name="text">
+        <string>X</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="2" column="0">
+       <property name="text">
+        <string>53314</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="2" column="1">
+       <property name="text">
+        <string>Susanne</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="2" column="2">
+       <property name="text">
+        <string>Lewis</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="2" column="3">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="2" column="4">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="2" column="5">
        <property name="text">
         <string>X</string>
        </property>

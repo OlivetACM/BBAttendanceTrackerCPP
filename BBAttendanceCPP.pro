@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,6 +17,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 INCLUDEPATH += include/ src/
 SOURCES += \
+    blackboard.cpp \
+    blackboarduser.cpp \
     src/addressdialog.cpp \
     src/dumpToFile.cpp \
     src/latedialog.cpp \
@@ -26,6 +28,8 @@ SOURCES += \
     src/mytablewidget.cpp
 
 HEADERS += \
+    blackboard.h \
+    blackboarduser.h \
     include/addressdialog.h \
     include/dumpToFile.h \
     include/latedialog.h \
@@ -34,8 +38,7 @@ HEADERS += \
     include/mytablewidget.h \
     include/ui_addressdialog.h \
     include/ui_latedialog.h \
-    include/ui_logindialog.h \
-    include/ui_mainwindow.h
+    include/ui_logindialog.h
 
 #FORMS += \
 #    addressdialog.ui \
@@ -52,3 +55,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES +=
+
+FORMS += \
+    ui/addressdialog.ui \
+    ui/latedialog.ui \
+    ui/logindialog.ui \
+    ui/mainwindow.ui
