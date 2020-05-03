@@ -4,7 +4,7 @@
 
 #include "dumpToFile.h"
 
-void dumpToFile(QTableWidget *model, QString output)
+void dumpToFile(myTableWidget *model, QString output)
 {
     QString textData;
     int rows = model->rowCount();

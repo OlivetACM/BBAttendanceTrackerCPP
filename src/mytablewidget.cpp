@@ -12,8 +12,8 @@ myTableWidget::myTableWidget(QWidget *parent)
 }
 
 void myTableWidget::searchIDAndMarkPresent(QString id) {
+    qDebug() << id;
     foreach(QTableWidgetItem *i, this->findItems(id, 0)) {
-        qDebug() << id;
         this->selectRow(i->row());
         const QDateTime date = QDateTime::currentDateTime();
         this->item(i->row(), 3)->setText(date.toString("h:mm a"));

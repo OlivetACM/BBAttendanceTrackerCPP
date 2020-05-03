@@ -20,7 +20,7 @@ SOURCES += \
 #    blackboard.cpp \
 #    blackboarduser.cpp \
     src/addressdialog.cpp \
-    src/dumpToFile.cpp \
+#    src/dumpToFile.cpp \
     src/latedialog.cpp \
     src/logindialog.cpp \
     src/main.cpp \
@@ -31,14 +31,15 @@ HEADERS += \
 #    blackboard.h \
 #    blackboarduser.h \
     include/addressdialog.h \
-    include/dumpToFile.h \
+#    include/dumpToFile.h \
     include/latedialog.h \
     include/logindialog.h \
     include/mainwindow.h \
     include/mytablewidget.h \
     include/ui_addressdialog.h \
     include/ui_latedialog.h \
-    include/ui_logindialog.h
+    include/ui_logindialog.h\
+    include/ui_mainwindow.h
 
 #FORMS += \
 #    addressdialog.ui \
@@ -56,8 +57,3 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES +=
 
-FORMS += \
-    ui/addressdialog.ui \
-    ui/latedialog.ui \
-    ui/logindialog.ui \
-    ui/mainwindow.ui
