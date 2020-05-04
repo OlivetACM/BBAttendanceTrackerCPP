@@ -21,7 +21,7 @@ void myTableWidget::searchIDAndMarkPresent(QString id) {
 }
 
 void myTableWidget::keyPressEvent(QKeyEvent *event) {
-    qDebug() << currentID;
+    qDebug() << event->key();
     if(event->key() == 16777220) {
         searchIDAndMarkPresent(currentID);
         currentID = "";
