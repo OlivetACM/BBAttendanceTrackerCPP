@@ -426,7 +426,7 @@
       </item>
       <item row="0" column="3">
        <property name="text">
-        <string/>
+        <string>x</string>
        </property>
        <property name="textAlignment">
         <set>AlignCenter</set>
@@ -434,7 +434,7 @@
       </item>
       <item row="0" column="4">
        <property name="text">
-        <string/>
+        <string>x</string>
        </property>
        <property name="textAlignment">
         <set>AlignCenter</set>
@@ -467,6 +467,22 @@
       <item row="1" column="2">
        <property name="text">
         <string>Lavin</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="1" column="3">
+       <property name="text">
+        <string>x</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="1" column="4">
+       <property name="text">
+        <string>x</string>
        </property>
        <property name="textAlignment">
         <set>AlignCenter</set>
@@ -506,7 +522,7 @@
       </item>
       <item row="2" column="3">
        <property name="text">
-        <string/>
+        <string>x</string>
        </property>
        <property name="textAlignment">
         <set>AlignCenter</set>
@@ -514,7 +530,7 @@
       </item>
       <item row="2" column="4">
        <property name="text">
-        <string/>
+        <string>x</string>
        </property>
        <property name="textAlignment">
         <set>AlignCenter</set>
