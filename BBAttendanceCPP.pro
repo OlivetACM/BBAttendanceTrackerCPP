@@ -17,7 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 INCLUDEPATH += include/ src/
 SOURCES += \
-    blackboard.cpp \
+    src/blackboard.cpp \
     src/addressdialog.cpp \
     src/dumpToFile.cpp \
     src/latedialog.cpp \
@@ -27,7 +27,7 @@ SOURCES += \
     src/mytablewidget.cpp
 
 HEADERS += \
-    blackboard.h \
+    include/blackboard.h \
     include/addressdialog.h \
     include/dumpToFile.h \
     include/latedialog.h \
