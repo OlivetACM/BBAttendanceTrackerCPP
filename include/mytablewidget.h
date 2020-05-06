@@ -5,6 +5,8 @@
 
 class myTableWidget : public QTableWidget
 {
+    Q_OBJECT
+
 public:
     myTableWidget(QWidget *parent = 0);
     void searchIDAndMarkPresent(QString id);
@@ -12,6 +14,10 @@ public:
     QString currentID;
 
 public slots:
+    void oncellSelected( int row, int column);
+
+signals:
+    void cellSelected(int row, int column);
 
 };
 

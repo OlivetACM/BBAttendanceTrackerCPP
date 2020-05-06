@@ -11,6 +11,7 @@
 #include "ui_mainwindow.h"
 #include "mytablewidget.h"
 #include "dumpToFile.h"
+#include "blackboard.h"
 
 void MainWindow::readSettings()
 {
@@ -47,9 +48,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-//    ui->tableWidget->selectRow(1);
+    ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+    ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
-//    ui->tableWidget->searchIDAndMarkPresent("53363");
+    connect(ui->tableWidget, SIGNAL(cellClicked(int, int)), ui->tableWidget, SLOT(oncellSelected(int, int)));
+
     readSettings();
 }
 
@@ -63,7 +67,8 @@ void MainWindow::on_btnLogin_clicked()
 {
 //    qDebug("btnLogin clicked");
     loginDialog *ld = new loginDialog();
-    ld->exec();
+    //ld->exec();
+    Blackboard();
     qDebug() << ld->getUsername() << "," << ld->getPassword();
 }
 
