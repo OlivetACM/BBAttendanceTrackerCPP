@@ -80,7 +80,7 @@ void MainWindow::on_comboClasses_currentIndexChanged(const QString &arg1)
 void MainWindow::on_btnSubmit_clicked()
 {
     qDebug("btnSubmit clicked");
-//    dumpToFile(ui->tableWidget, "text");
+    dumpToFile(ui->tableWidget, "text");
 }
 
 void MainWindow::on_btnLogout_clicked()
@@ -102,7 +102,7 @@ void MainWindow::on_actionChange_Font_triggered()
 //    qDebug() << this->font.toString();
     bool ok;
     this->font = QFontDialog::getFont(&ok, this->font);
-//    qDebug() << this->font.toString();
+    qDebug() << this->font.toString();
     settings.setValue("reader.font", this->font.toString());
     qApp->setFont(this->font);
 }
