@@ -66,10 +66,10 @@ MainWindow::~MainWindow()
 void MainWindow::on_btnLogin_clicked()
 {
 //    qDebug("btnLogin clicked");
-    loginDialog *ld = new loginDialog();
-    //ld->exec();
+//    loginDialog *ld = new loginDialog();
+//    ld->exec();
     Blackboard();
-    qDebug() << ld->getUsername() << "," << ld->getPassword();
+//    qDebug() << ld->getUsername() << "," << ld->getPassword();
 }
 
 void MainWindow::on_comboClasses_currentIndexChanged(const QString &arg1)
@@ -104,7 +104,18 @@ void MainWindow::on_actionChange_Font_triggered()
     this->font = QFontDialog::getFont(&ok, this->font);
     qDebug() << this->font.toString();
     settings.setValue("reader.font", this->font.toString());
-    qApp->setFont(this->font);
+//    QApplication::setFont(this->font.toString());
+    ui->menubar->setFont(this->font);
+    ui->btnLogin->setFont(this->font);
+    ui->btnLogout->setFont(this->font);
+    ui->btnSubmit->setFont(this->font);
+    ui->lblEndTime->setFont(this->font);
+    ui->lblLateTime->setFont(this->font);
+    ui->lblStartTime->setFont(this->font);
+    ui->txtEndTime->setFont(this->font);
+    ui->txtLateTime->setFont(this->font);
+    ui->txtStartTime->setFont(this->font);
+    ui->tableWidget->setFont(this->font);
 }
 
 void MainWindow::on_actionBlackboard_Address_triggered()

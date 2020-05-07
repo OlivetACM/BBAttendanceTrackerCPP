@@ -339,7 +339,7 @@ public:
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 1168, 22));
         menubar->setDefaultUp(true);
-        menubar->setNativeMenuBar(true);
+        menubar->setNativeMenuBar(false);
         menuBBAttendanceTracker = new QMenu(menubar);
         menuBBAttendanceTracker->setObjectName(QString::fromUtf8("menuBBAttendanceTracker"));
         MainWindow->setMenuBar(menubar);
