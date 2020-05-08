@@ -22,7 +22,6 @@ void myTableWidget::oncellSelected( int row, int column)
 
 void myTableWidget::searchIDAndMarkPresent(QString id) {
     foreach(QTableWidgetItem *i, this->findItems(id, 0)) {
-        //qDebug() << this->item(i->row(), 3)->text();
         this->scrollToItem(i);
         this->selectRow(i->row());
         const QDateTime date = QDateTime::currentDateTime();
@@ -31,13 +30,11 @@ void myTableWidget::searchIDAndMarkPresent(QString id) {
 }
 
 void myTableWidget::keyPressEvent(QKeyEvent *event) {
-    qDebug() << event->text();
     if(event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return) {
         searchIDAndMarkPresent(currentID);
         currentID = "";
     } else {
-        if(QString("0123456789").contains(event->text())) {
+        if(QString("0123456789").contains(event->text()))
             currentID += event->text();
-        }
     }
 }

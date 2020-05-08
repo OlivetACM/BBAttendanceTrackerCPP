@@ -345,7 +345,9 @@ public:
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
+        statusbar->showMessage("this is a statusbar");
         MainWindow->setStatusBar(statusbar);
+
 
         menubar->addAction(menuBBAttendanceTracker->menuAction());
         menuBBAttendanceTracker->addAction(actionBlackboard_Address);

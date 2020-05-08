@@ -17,6 +17,7 @@ public:
     ~MainWindow();
     void readSettings();
     void writeSettings();
+    void closeEvent(QCloseEvent *event);
     QSettings settings;
     QFont font;
     QString bb_address;

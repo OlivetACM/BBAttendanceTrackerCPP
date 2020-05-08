@@ -7,6 +7,7 @@
 #include "QFontDialog"
 #include "QFontDatabase"
 #include "QSettings"
+#include "QCloseEvent"
 
 #include "ui_mainwindow.h"
 #include "mytablewidget.h"
@@ -15,7 +16,7 @@
 
 void MainWindow::readSettings()
 {
-    QSettings *settings = new QSettings(QDir::currentPath() + "/my_config_file.ini", QSettings::IniFormat);
+    QSettings *settings = new QSettings(QDir::currentPath() + "/bbatcpp.ini", QSettings::IniFormat);
     foreach(const QString &key, settings->allKeys()) {
         qDebug() << key << settings->value(key).toString();
     }
@@ -27,11 +28,13 @@ void MainWindow::readSettings()
     qDebug() << this->font.toString();
     bb_address = settings->value("reader.bb_address").toString();
     late_threshold = settings->value("reader.late_threshold").toInt();
+    if (bb_address != "")
+        ui->statusbar->showMessage(bb_address);
 }
 
 void MainWindow::writeSettings()
 {
-    QSettings *settings = new QSettings(QDir::currentPath() + "/my_config_file.ini", QSettings::IniFormat);
+    QSettings *settings = new QSettings(QDir::currentPath() + "/bbatcpp.ini", QSettings::IniFormat);
     settings->setValue("reader.bb_address", bb_address);
     settings->setValue("reader.late_threshold", late_threshold);
     settings->setValue("reader.font.family", this->font.family());
@@ -62,7 +65,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::on_btnLogin_clicked()
 {
 //    qDebug("btnLogin clicked");
@@ -91,20 +93,21 @@ void MainWindow::on_btnLogout_clicked()
 
 void MainWindow::on_actionQuit_triggered()
 {
-//    qDebug("actionQuit triggered");
+    writeSettings();
+    exit(0);
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
     writeSettings();
     exit(0);
 }
 
 void MainWindow::on_actionChange_Font_triggered()
 {
-//    qDebug("fontDialog triggered");
-//    qDebug() << this->font.toString();
     bool ok;
     this->font = QFontDialog::getFont(&ok, this->font);
-    qDebug() << this->font.toString();
     settings.setValue("reader.font", this->font.toString());
-//    QApplication::setFont(this->font.toString());
     ui->menubar->setFont(this->font);
     ui->btnLogin->setFont(this->font);
     ui->btnLogout->setFont(this->font);
@@ -116,20 +119,20 @@ void MainWindow::on_actionChange_Font_triggered()
     ui->txtLateTime->setFont(this->font);
     ui->txtStartTime->setFont(this->font);
     ui->tableWidget->setFont(this->font);
+    ui->statusbar->setFont(this->font);
 }
 
 void MainWindow::on_actionBlackboard_Address_triggered()
 {
-//    qDebug("loginDialog triggered");
     addressDialog *ad = new addressDialog();
     ad->setAddress(this->bb_address);
     ad->exec();
     this->bb_address = ad->getAddress();
+    ui->statusbar->showMessage(this->bb_address);
 }
 
 void MainWindow::on_actionLate_Threshold_triggered()
 {
-//    qDebug("lateDialog triggered");
     lateDialog *ld = new lateDialog();
     ld->setLateInterval(this->late_threshold);
     ld->exec();
